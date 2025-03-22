@@ -19,16 +19,9 @@
                 <form id="calcForm">
                     <div class="input-group">
                         <label for="dollarValue">
-                            <i class="fas fa-dollar-sign"></i> Bid Price:
+                            <i class="fas fa-dollar-sign"></i> Premium:
                         </label>
                         <input type="text" id="dollarValue" placeholder="0.00" required>
-                    </div>
-                    
-                    <div class="input-group">
-                        <label for="strikePrice">
-                            <i class="fas fa-tag"></i> Strike Price:
-                        </label>
-                        <input type="text" id="strikePrice" placeholder="0.00" required>
                     </div>
                     
                     <div class="input-group">
@@ -36,6 +29,13 @@
                             <i class="fas fa-calendar-day"></i> Days to Expiration:
                         </label>
                         <input type="number" id="days" min="1" placeholder="1" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="strikePrice">
+                            <i class="fas fa-tag"></i> Strike Price:
+                        </label>
+                        <input type="text" id="strikePrice" placeholder="0.00" required>
                     </div>
                     
                     <button type="submit" class="calculate-btn">
@@ -61,9 +61,9 @@
                     
                     <div class="result-item">
                         <div class="result-label">
-                            <i class="fas fa-percentage"></i> Return per Strike Dollar:
+                            <i class="fas fa-percentage"></i> Annual Return Rate:
                         </div>
-                        <div class="result-value" id="annualizedReturn">$0.00</div>
+                        <div class="result-value" id="annualizedReturn">0.00%</div>
                     </div>
                 </div>
             </div>

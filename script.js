@@ -16,11 +16,18 @@ document.addEventListener('DOMContentLoaded', function() {
         maximumFractionDigits: 2
     });
     
-    // Bid price input element
-    const bidPriceInput = document.getElementById('dollarValue');
+    // Format for percentage display
+    const percentFormatter = new Intl.NumberFormat('en-US', {
+        style: 'percent',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
     
-    // Format the bid price input when it loses focus
-    bidPriceInput.addEventListener('blur', function() {
+    // Premium input element
+    const premiumInput = document.getElementById('dollarValue');
+    
+    // Format the premium input when it loses focus
+    premiumInput.addEventListener('blur', function() {
         if (this.value) {
             const value = parseFloat(this.value.replace(/[^\d.-]/g, ''));
             if (!isNaN(value)) {
@@ -30,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Clear formatting when input gets focus
-    bidPriceInput.addEventListener('focus', function() {
+    premiumInput.addEventListener('focus', function() {
         const value = this.value.replace(/[^\d.-]/g, '');
         this.value = value;
     });
@@ -59,26 +66,26 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         
         // Get input values - remove currency formatting for calculation
-        const bidPrice = parseFloat(bidPriceInput.value.replace(/[^\d.-]/g, ''));
+        const premium = parseFloat(premiumInput.value.replace(/[^\d.-]/g, ''));
         const strikePrice = parseFloat(strikePriceInput.value.replace(/[^\d.-]/g, ''));
         const days = parseInt(document.getElementById('days').value);
         
         // Validate inputs
-        if (isNaN(bidPrice) || isNaN(strikePrice) || isNaN(days) || 
-            bidPrice < 0 || strikePrice <= 0 || days < 1) {
-            alert('Please enter valid values for bid price, strike price, and days to expiration.');
+        if (isNaN(premium) || isNaN(strikePrice) || isNaN(days) || 
+            premium < 0 || strikePrice <= 0 || days < 1) {
+            alert('Please enter valid values for premium, strike price, and days to expiration.');
             return;
         }
         
         // Calculate returns
-        const dailyReturn = bidPrice / days;
+        const dailyReturn = premium / days;
         const yearlyReturn = dailyReturn * 365;
         const annualizedReturn = yearlyReturn / strikePrice;
         
         // Update results
         dailyReturnElement.textContent = formatter.format(dailyReturn);
         yearlyReturnElement.textContent = formatter.format(yearlyReturn);
-        annualizedReturnElement.textContent = formatter.format(annualizedReturn);
+        annualizedReturnElement.textContent = percentFormatter.format(annualizedReturn);
         
         // Show results
         resultsDiv.style.display = 'block';
@@ -91,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Add input validation for better UX
-    const numericInputs = [bidPriceInput, strikePriceInput];
+    const numericInputs = [premiumInput, strikePriceInput];
     numericInputs.forEach(input => {
         input.addEventListener('input', function() {
             // Allow only numbers, decimal point, and currency symbols

@@ -1,22 +1,22 @@
 # FinCalc
 
-An options trading calculator for determining premium returns based on bid price, strike price, and days to expiration.
+An options trading calculator for determining premium returns based on premium, strike price, and days to expiration.
 
 ## Features
 
-- Calculate daily premium return (bid price ÷ days to expiration)
+- Calculate daily premium return (premium ÷ days to expiration)
 - Calculate annual premium return (daily return × 365)
-- Calculate return per strike dollar (annual premium return ÷ strike price)
+- Calculate annual return rate (annual premium return ÷ strike price)
 - Clean, responsive user interface
-- Real-time currency formatting
+- Real-time currency and percentage formatting
 
 ## How to Use
 
-1. Enter the bid price in the first field
-2. Enter the strike price in the second field
-3. Enter the number of days to expiration in the third field
+1. Enter the premium in the first field
+2. Enter the days to expiration in the second field
+3. Enter the strike price in the third field
 4. Click the "Calculate" button
-5. View your daily premium return, annual premium return, and return per strike dollar
+5. View your daily premium return, annual premium return, and annual return rate
 
 ## Technologies Used
 
