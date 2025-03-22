@@ -11,7 +11,7 @@
     <div class="container">
         <header>
             <h1><i class="fas fa-calculator"></i> FinCalc</h1>
-            <p>Your Daily & Annual Return Calculator</p>
+            <p>Your Options Return Calculator</p>
         </header>
         
         <main>
@@ -19,14 +19,21 @@
                 <form id="calcForm">
                     <div class="input-group">
                         <label for="dollarValue">
-                            <i class="fas fa-dollar-sign"></i> Dollar Value:
+                            <i class="fas fa-dollar-sign"></i> Bid Price:
                         </label>
                         <input type="text" id="dollarValue" placeholder="0.00" required>
                     </div>
                     
                     <div class="input-group">
+                        <label for="strikePrice">
+                            <i class="fas fa-tag"></i> Strike Price:
+                        </label>
+                        <input type="text" id="strikePrice" placeholder="0.00" required>
+                    </div>
+                    
+                    <div class="input-group">
                         <label for="days">
-                            <i class="fas fa-calendar-day"></i> Number of Days:
+                            <i class="fas fa-calendar-day"></i> Days to Expiration:
                         </label>
                         <input type="number" id="days" min="1" placeholder="1" required>
                     </div>
@@ -40,16 +47,23 @@
                     <h2>Results</h2>
                     <div class="result-item">
                         <div class="result-label">
-                            <i class="fas fa-calendar-day"></i> Daily Return:
+                            <i class="fas fa-calendar-day"></i> Daily Premium Return:
                         </div>
                         <div class="result-value" id="dailyCost">$0.00</div>
                     </div>
                     
                     <div class="result-item">
                         <div class="result-label">
-                            <i class="fas fa-calendar-alt"></i> Yearly Return:
+                            <i class="fas fa-calendar-alt"></i> Annual Premium Return:
                         </div>
                         <div class="result-value" id="yearlyCost">$0.00</div>
+                    </div>
+                    
+                    <div class="result-item">
+                        <div class="result-label">
+                            <i class="fas fa-percentage"></i> Return per Strike Dollar:
+                        </div>
+                        <div class="result-value" id="annualizedReturn">$0.00</div>
                     </div>
                 </div>
             </div>

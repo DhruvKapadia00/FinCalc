@@ -1,20 +1,22 @@
 # FinCalc
 
-A simple, elegant web application for calculating daily and yearly financial returns based on dollar value and number of days.
+An options trading calculator for determining premium returns based on bid price, strike price, and days to expiration.
 
 ## Features
 
-- Calculate daily return (dollar value ÷ days)
-- Calculate yearly return (daily return × 365)
+- Calculate daily premium return (bid price ÷ days to expiration)
+- Calculate annual premium return (daily return × 365)
+- Calculate return per strike dollar (annual premium return ÷ strike price)
 - Clean, responsive user interface
 - Real-time currency formatting
 
 ## How to Use
 
-1. Enter a dollar value in the first field
-2. Enter the number of days in the second field
-3. Click the "Calculate" button
-4. View your daily and yearly returns
+1. Enter the bid price in the first field
+2. Enter the strike price in the second field
+3. Enter the number of days to expiration in the third field
+4. Click the "Calculate" button
+5. View your daily premium return, annual premium return, and return per strike dollar
 
 ## Technologies Used
 
