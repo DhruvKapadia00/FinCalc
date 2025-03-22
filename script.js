@@ -80,12 +80,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // Calculate returns
         const dailyReturn = premium / days;
         const yearlyReturn = dailyReturn * 365;
-        const annualizedReturn = yearlyReturn / strikePrice;
+        
+        // Calculate annual return rate as a percentage
+        // Annual return rate = Annual premium return / Strike price
+        // Divide by 100 to convert to the correct percentage format
+        const annualReturnRate = (yearlyReturn / strikePrice) / 100;
         
         // Update results
         dailyReturnElement.textContent = formatter.format(dailyReturn);
         yearlyReturnElement.textContent = formatter.format(yearlyReturn);
-        annualizedReturnElement.textContent = percentFormatter.format(annualizedReturn);
+        annualizedReturnElement.textContent = percentFormatter.format(annualReturnRate);
         
         // Show results
         resultsDiv.style.display = 'block';
