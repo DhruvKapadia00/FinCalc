@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinCalc - Financial Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-calculator"></i> FinCalc</h1>
+            <p>Your Daily & Annual Return Calculator</p>
+        </header>
+        
+        <main>
+            <div class="calculator-card">
+                <form id="calcForm">
+                    <div class="input-group">
+                        <label for="dollarValue">
+                            <i class="fas fa-dollar-sign"></i> Dollar Value:
+                        </label>
+                        <input type="text" id="dollarValue" placeholder="0.00" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="days">
+                            <i class="fas fa-calendar-day"></i> Number of Days:
+                        </label>
+                        <input type="number" id="days" min="1" placeholder="1" required>
+                    </div>
+                    
+                    <button type="submit" class="calculate-btn">
+                        <i class="fas fa-calculator"></i> Calculate
+                    </button>
+                </form>
+                
+                <div class="results" id="results" style="display: none;">
+                    <h2>Results</h2>
+                    <div class="result-item">
+                        <div class="result-label">
+                            <i class="fas fa-calendar-day"></i> Daily Return:
+                        </div>
+                        <div class="result-value" id="dailyCost">$0.00</div>
+                    </div>
+                    
+                    <div class="result-item">
+                        <div class="result-label">
+                            <i class="fas fa-calendar-alt"></i> Yearly Return:
+                        </div>
+                        <div class="result-value" id="yearlyCost">$0.00</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 FinCalc - Financial Calculator</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
